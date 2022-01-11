@@ -10,7 +10,7 @@
   async function submitForm() {
     const response = await fetch('/schedule-checkin-submit.json', {
       method: 'POST',
-      body: JSON.stringify({ confirmation_number, first_name, last_name })
+      body: JSON.stringify({ data: { confirmation_number, first_name, last_name } })
     });
 
     if (response.status === HttpStatus.OK) {

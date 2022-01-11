@@ -1,7 +1,7 @@
 import HttpStatus from 'http-status';
 
 /**
- * This pass-through keeps the actual endpoint secret
+ * This pass-through keeps endpoint and authorizer token secret from the frontend
  */
 export async function post(req: { body: string }) {
   const requestBody = JSON.parse(req.body);
@@ -26,6 +26,7 @@ export async function post(req: { body: string }) {
       body: res.body
     };
   } catch (error) {
+    console.error(error);
     return {
       status: HttpStatus.INTERNAL_SERVER_ERROR,
       body: JSON.stringify({
