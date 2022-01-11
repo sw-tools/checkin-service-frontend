@@ -1,6 +1,17 @@
 # Checkin Service Frontend
 
+An example frontend for https://github.com/sw-tools/checkin-service.
+
 ## Developing
+
+Ensure you've already [deployed the backend to AWS](https://github.com/sw-tools/checkin-service#readme).
+
+Create a .env file with variables from your deployed backend:
+
+```
+HOST_URL=https://your_given_api_gateway_prefix.execute-api.us-west-2.amazonaws.com/prod
+AUTHORIZER_TOKEN=your_chosen_token
+```
 
 ```bash
 npm install
@@ -10,14 +21,7 @@ npm run dev
 npm run dev -- --open
 ```
 
-## Building
+## Deploying
 
-```bash
-npm run build
-```
-
-> You can preview the built app with `npm run preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.
-
-## TODO
-
-- Add environment variables to Netlify configuration via Netlify's UI
+1. Fork this repo, then go to netlify.com and create a new site from your fork.
+1. [Add the environment variables](https://docs.netlify.com/configure-builds/environment-variables/) you've specified in your .env file to your Netlify site's environment variable configuration.
