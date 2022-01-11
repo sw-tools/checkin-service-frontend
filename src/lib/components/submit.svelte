@@ -22,7 +22,7 @@
       ).toLocaleString(Luxon.DateTime.DATETIME_FULL_WITH_SECONDS);
 
       showMessage = true;
-      responseMessage = `Checkin scheduled successfully. You'll be checked ${checkinAvailable}.`;
+      responseMessage = `Checkin scheduled successfully. You'll be checked in ${checkinAvailable}.`;
       return;
     }
 
