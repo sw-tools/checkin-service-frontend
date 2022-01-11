@@ -3,7 +3,13 @@
   "ignorePaths": [],
   "dictionaryDefinitions": [],
   "dictionaries": [],
-  "words": ["checkin", "fontsource", "preprocessors", "sveltejs"],
+  "words": [
+    "checkin",
+    "fira",
+    "fontsource",
+    "preprocessors",
+    "sveltejs"
+  ],
   "ignoreWords": [],
   "import": []
 }
