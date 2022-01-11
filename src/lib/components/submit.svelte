@@ -1,5 +1,6 @@
-<script>
+<script lang="ts">
   import HttpStatus from 'http-status';
+  import * as Luxon from 'luxon';
 
   let confirmation_number = '';
   let first_name = '';
@@ -14,8 +15,14 @@
     });
 
     if (response.status === HttpStatus.OK) {
+      const responseBody: ResponseBody = await response.json();
+
+      const checkinAvailable = Luxon.DateTime.fromSeconds(
+        responseBody.data.checkin_available_epoch
+      ).toLocaleString(Luxon.DateTime.DATETIME_FULL_WITH_SECONDS);
+
       showMessage = true;
-      responseMessage = 'Checkin scheduled successfully';
+      responseMessage = `Checkin scheduled successfully. You'll be checked ${checkinAvailable}.`;
       return;
     }
 
@@ -24,6 +31,13 @@
       responseMessage = 'Unable to schedule checkin';
       return;
     }
+  }
+
+  interface ResponseBody {
+    data: {
+      checkin_available_epoch: number;
+      checkin_boot_epoch: number;
+    };
   }
 </script>
 

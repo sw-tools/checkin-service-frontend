@@ -21,9 +21,10 @@ export async function post(req: { body: string }) {
         }
       })
     });
+    const responseBody = await res.json();
     return {
       status: res.status,
-      body: res.body
+      body: JSON.stringify(responseBody)
     };
   } catch (error) {
     console.error(error);
