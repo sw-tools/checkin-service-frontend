@@ -10,6 +10,10 @@
     "preprocessors",
     "sveltejs"
   ],
-  "ignoreWords": [],
+  "ignoreWords": [
+    "checkins",
+    "vite",
+    "daisyui"
+  ],
   "import": []
 }

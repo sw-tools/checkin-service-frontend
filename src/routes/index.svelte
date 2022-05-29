@@ -1,9 +1,8 @@
 <script>
-  import Submit from '$lib/components/submit.svelte';
+  import { goto } from '$app/navigation';
+  import { onMount } from 'svelte';
 
-  export const prerender = true;
+  onMount(() => {
+    goto('/checkins');
+  });
 </script>
-
-<svelte:head />
-
-<Submit />

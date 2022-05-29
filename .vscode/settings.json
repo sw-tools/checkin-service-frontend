@@ -35,7 +35,9 @@
     ".eslintrc.cjs": true,
     "tsconfig.json": true,
     ".gitignore": true,
-    ".svelte-kit": true
+    ".svelte-kit": true,
+    "build": true,
+    ".netlify": true
   },
   "tsInterfaceSorter.emptyLineBetweenProperties": false
 }

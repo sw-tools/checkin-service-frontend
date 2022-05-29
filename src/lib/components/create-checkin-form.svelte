@@ -9,7 +9,7 @@
   let responseMessage = '';
 
   async function submitForm() {
-    const response = await fetch('/schedule-checkin-submit.json', {
+    const response = await fetch('/checkins/index.json', {
       method: 'POST',
       body: JSON.stringify({ data: { confirmation_number, first_name, last_name } })
     });
