@@ -1,15 +1,5 @@
 <script>
-  import * as AuthService from '$lib/auth-service';
   import { checkins, user } from '$lib/store';
-  import { onMount } from 'svelte';
-
-  let auth0Client;
-
-  onMount(async () => {
-    auth0Client = await AuthService.createClient();
-    const localUser = await auth0Client.getUser();
-    user.set(localUser);
-  });
 </script>
 
 <main>
