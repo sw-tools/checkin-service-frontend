@@ -64,6 +64,11 @@ async function postInternal(req: ServerRequest<never, string>) {
     body: JSON.stringify(externalRequestBody)
   });
 
+  if (!res.ok) {
+    const responseBody = await res.json();
+    throw new Error(JSON.stringify(responseBody));
+  }
+
   const responseBody = (await res.json()) as ExternalResponseBody;
   return {
     status: res.status,
