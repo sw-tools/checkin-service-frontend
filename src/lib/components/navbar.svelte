@@ -25,7 +25,7 @@
 <main>
   <div class="navbar bg-base-100 shadow-xl rounded-box">
     <div class="navbar-start">
-      <div class="btn btn-ghost normal-case text-xl">Southwest Tools</div>
+      <a class="btn btn-ghost normal-case text-xl hover:no-underline" href="/checkins">Southwest Tools</a>
     </div>
     <div class="navbar-end">
       {#if !$user}
