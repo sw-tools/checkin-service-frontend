@@ -31,9 +31,7 @@ export type PostErrorResponseBody = {
 /**
  * This pass-through keeps endpoint and authorizer token secret from the frontend
  */
-export const post: RequestHandler<never, string, PostResponseBody | PostErrorResponseBody> = async (
-  req
-) => {
+export const post: RequestHandler<never, string, PostResponseBody | PostErrorResponseBody> = async (req) => {
   let responseBody: MaybePromise<void | EndpointOutput<PostResponseBody | PostErrorResponseBody>>;
   try {
     responseBody = await postInternal(req);
