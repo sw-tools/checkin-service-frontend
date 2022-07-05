@@ -47,7 +47,7 @@ export const post: RequestHandler<never, string, PostResponseBody | PostErrorRes
 };
 
 async function postInternal(req: ServerRequest<never, string>) {
-  const requestBody = JSON.parse(req.body);
+  const requestBody = JSON.parse(req.body) as PostRequestBody;
   const externalRequestBody: ExternalRequestBody = {
     data: {
       confirmation_number: requestBody.data.confirmation_number,

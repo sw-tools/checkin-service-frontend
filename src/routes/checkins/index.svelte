@@ -1,6 +1,28 @@
-<script>
-  import { checkins, user } from '$lib/store';
+<script context="module" lang="ts">
+  import { user } from '$lib/store';
+  import type { Load } from '@sveltejs/kit';
   import * as Luxon from 'luxon';
+  import type { GetResponseBody } from './list-for-user.json';
+
+  export const load: Load = async ({ fetch }) => {
+    const response = await fetch('/checkins/list-for-user.json');
+    const responseBody = (await response.json()) as GetResponseBody;
+    if (!response.ok) {
+      return {
+        error: new Error(),
+        status: 500
+      };
+    }
+    return {
+      props: {
+        checkins: responseBody.data
+      }
+    };
+  };
+</script>
+
+<script lang="ts">
+  export let checkins: GetResponseBody['data'];
 </script>
 
 <div>
@@ -14,7 +36,7 @@
           <div class="flex justify-end">
             <a href="/checkins/new" class="button hover:no-underline">New</a>
           </div>
-          {#each $checkins as checkin (`${checkin.confirmation_number}${checkin.first_name}${checkin.last_name}`)}
+          {#each checkins as checkin (`${checkin.confirmation_number}${$user.given_name}${$user.family_name}`)}
             <div class=" card w-full bg-base-100 shadow-xl overflow-visible">
               <div class="card-body">
                 <div class="card-actions">
@@ -23,7 +45,7 @@
                 <h2 class="card-title">
                   #{checkin.confirmation_number}
                 </h2>
-                <p class="text-gray-500"><i>{checkin.first_name} {checkin.last_name}</i></p>
+                <p class="text-gray-500"><i>{$user.given_name} {$user.family_name}</i></p>
                 <p class="text-gray-500">
                   <i
                     >Checking you in at {Luxon.DateTime.fromSeconds(checkin.checkin_available_epoch).toFormat(
