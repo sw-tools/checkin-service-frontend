@@ -22,7 +22,7 @@
   }
 </script>
 
-<main>
+<nav>
   <div class="navbar bg-base-100 shadow-xl rounded-box">
     <div class="navbar-start">
       <a class="btn btn-ghost normal-case text-xl hover:no-underline" href="/checkins">Southwest Tools</a>
@@ -35,4 +35,4 @@
       {/if}
     </div>
   </div>
-</main>
+</nav>

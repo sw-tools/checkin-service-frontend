@@ -6,8 +6,8 @@
 <main>
   <div class="mt-5 mr-5 ml-5">
     <Navbar />
-    <main class="mt-5">
+    <div class="mt-5">
       <slot />
-    </main>
+    </div>
   </div>
 </main>

@@ -11,6 +11,6 @@ export const checkins = writable<Checkin[]>([
     first_name: 'Some',
     last_name: 'Person',
     confirmation_number: '123456789',
-    checkin_available_epoch: 500
+    checkin_available_epoch: 1657060800
   }
 ]);

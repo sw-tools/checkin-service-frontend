@@ -6,7 +6,8 @@ module.exports = {
       {
         'emerald-customized': {
           ...require('daisyui/src/colors/themes')['[data-theme=emerald]'],
-          '--btn-text-case': 'none'
+          '--btn-text-case': 'none',
+          primary: '#4e46dc'
         }
       }
     ]
