@@ -11,10 +11,10 @@
           <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Scheduled Checkins</h2>
         </div>
 
-        <div class="flex justify-end">
-          <a href="/checkins/new" class="button hover:no-underline">New</a>
-        </div>
         {#if $user}
+          <div class="flex justify-end">
+            <a href="/checkins/new" class="button hover:no-underline">New</a>
+          </div>
           {#each $checkins as checkin (`${checkin.confirmation_number}${checkin.first_name}${checkin.last_name}`)}
             <div class=" card w-full bg-base-100 shadow-xl overflow-visible">
               <!-- <div class=" -left-5 -top-5 z-99">
