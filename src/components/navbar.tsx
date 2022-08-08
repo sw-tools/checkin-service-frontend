@@ -7,14 +7,6 @@ type ProfileImageProps = {
   url: string;
 };
 
-const ProfileImage = ({ url }: ProfileImageProps) => {
-  return (
-    <div className="rounded-full border-2 border-white">
-      <Image src={url} alt="Profile image" height={48} width={48} />
-    </div>
-  );
-};
-
 const Navbar = () => {
   const { data: session } = useSession();
 
