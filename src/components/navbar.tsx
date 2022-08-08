@@ -22,11 +22,10 @@ const Navbar = () => {
     <nav>
       <div className="navbar bg-base-100 shadow-xl rounded-box">
         <div className="navbar-start">
-          <Link
-            className="btn btn-ghost normal-case text-xl hover:no-underline"
-            href="/checkins"
-          >
-            Southwest Tools
+          <Link href="/checkins">
+            <button className="btn btn-ghost normal-case text-xl hover:no-underline">
+              Southwest Tools
+            </button>
           </Link>
         </div>
         <div className="navbar-end">
