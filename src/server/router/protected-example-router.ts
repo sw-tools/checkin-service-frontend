@@ -20,8 +20,7 @@ export const protectedExampleRouter = createProtectedRouter()
         });
       }
 
-      const url = `${env.CHECKIN_SERVICE_HOST_URL}/prod/v1/checkin-service/checkins/${userId}`;
-
+      const url = `${env.CHECKIN_SERVICE_HOST_URL}/prod/v1/checkin-service/checkins?user_id=${userId}`;
       const res = await fetch(url, {
         headers: {
           "Content-Type": "application/json",
