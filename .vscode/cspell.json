@@ -7,13 +7,19 @@
     "checkin",
     "fira",
     "fontsource",
+    "luxon",
+    "nextauth",
     "preprocessors",
-    "sveltejs"
+    "superjson",
+    "sveltejs",
+    "tailwindcss",
+    "trpc"
   ],
   "ignoreWords": [
     "checkins",
-    "vite",
-    "daisyui"
+    "daisyui",
+    "googleusercontent",
+    "vite"
   ],
   "import": []
 }
