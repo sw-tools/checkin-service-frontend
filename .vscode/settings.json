@@ -19,6 +19,9 @@
     "source.organizeImports": true,
     "source.fixAll": true
   },
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
   "files.watcherExclude": {
     ".git": true,
     "node_modules": true
@@ -28,16 +31,18 @@
     "dist": true,
     "node_modules": true,
     "package-lock.json": true,
-    ".eslintignore": true,
-    ".prettierrc": true,
-    "netlify.toml": true,
-    "svelte.config.js": true,
-    ".eslintrc.cjs": true,
     "tsconfig.json": true,
     ".gitignore": true,
     ".svelte-kit": true,
     "build": true,
-    ".netlify": true
+    ".netlify": true,
+    ".eslintrc.json": true,
+    ".eslintignore": true,
+    "next-env.d.ts": true,
+    "next.config.mjs": true,
+    "postcss.config.cjs": true,
+    "tailwind.config.cjs": true,
+    ".next": true
   },
   "tsInterfaceSorter.emptyLineBetweenProperties": false
 }
