@@ -1,5 +1,6 @@
 import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
+import Link from "next/link";
 import { FaUser } from "react-icons/fa";
 
 type ProfileImageProps = {
@@ -21,12 +22,12 @@ const Navbar = () => {
     <nav>
       <div className="navbar bg-base-100 shadow-xl rounded-box">
         <div className="navbar-start">
-          <a
+          <Link
             className="btn btn-ghost normal-case text-xl hover:no-underline"
             href="/checkins"
           >
             Southwest Tools
-          </a>
+          </Link>
         </div>
         <div className="navbar-end">
           {!session ? (
