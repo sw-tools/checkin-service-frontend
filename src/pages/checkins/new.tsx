@@ -1,6 +1,7 @@
 import { TRPCClientError } from "@trpc/client";
 import { NextPage } from "next";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { FormEventHandler, useState } from "react";
 import { trpc } from "../../utils/trpc";
 
@@ -13,6 +14,7 @@ const New: NextPage = () => {
   const [error, setError] = useState<string>();
 
   const createCheckinMutation = trpc.useMutation("checkins.create");
+  const router = useRouter();
 
   const submitForm: FormEventHandler<HTMLFormElement> = async (event) => {
     event.preventDefault();
@@ -41,12 +43,15 @@ const New: NextPage = () => {
         } else {
           setError(typedError.message);
         }
-        return;
+        throw error;
       }
     };
-    mutate().catch(console.error);
 
-    // window.location.href = "/checkins";
+    mutate()
+      .then(() => {
+        router.push("/checkins");
+      })
+      .catch(console.error);
   };
 
   return (
@@ -133,7 +138,7 @@ const New: NextPage = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between">
+                {/* <div className="flex items-center justify-between">
                   <div className="flex items-center">
                     <input
                       id="remember_me"
@@ -148,7 +153,7 @@ const New: NextPage = () => {
                       Watch this flight for a better price
                     </label>
                   </div>
-                </div>
+                </div> */}
 
                 <div>
                   {!error ? (
