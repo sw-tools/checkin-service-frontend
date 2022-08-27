@@ -64,3 +64,10 @@ model VerificationToken {
   @@unique([identifier, token])
   @@map("verification_tokens")
 }
+
+model CaffeinateMessage {
+  id      String @id @default(cuid())
+  message String
+
+  @@map("caffeinate_messages")
+}
