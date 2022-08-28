@@ -8,10 +8,10 @@ Install dependencies
 npm install
 ```
 
-Set up a local database (on Mac)
+Set up a local database
 
 ```sh
-mkdir -p prisma/postgres-data && UID=$(id -u) GID=$(id -g) docker compose up
+docker compose up -d
 ```
 
 Push database schema to your local database
