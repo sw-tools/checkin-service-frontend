@@ -10,5 +10,5 @@ const handler: Handler = async () => {
   return { statusCode: 200 };
 };
 
-/** run approximately once every 5 days at midnight UTC */
-module.exports.handler = schedule("0 0 */5 * *", handler);
+/** run once a day at midnight UTC */
+module.exports.handler = schedule("0 0 12 1/1 * ? *", handler);
