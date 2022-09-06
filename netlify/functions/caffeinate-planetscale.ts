@@ -11,4 +11,4 @@ const handler: Handler = async () => {
 };
 
 /** run once a day at 3am UTC */
-module.exports.handler = schedule("15 3 * * *", handler);
+module.exports.handler = schedule("20 3 * * *", handler);
