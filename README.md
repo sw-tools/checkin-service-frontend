@@ -12,6 +12,8 @@ Set up [Google authentication for NextAuth](https://next-auth.js.org/providers/g
 
 Stand up [Checkin Service](https://github.com/sw-tools/checkin-service) on AWS and fill in CHECKIN_SERVICE_AUTHORIZER_TOKEN and CHECKIN_SERVICE_HOST_URL in your .env file.
 
+Enable experimental [Scheduled Functions](https://docs.netlify.com/netlify-labs/experimental-features/scheduled-functions/#getting-started) in Netlify to support [this cron job](/netlify/functions/caffeinate-planetscale.ts).
+
 ### Install dependencies
 
 ```sh
